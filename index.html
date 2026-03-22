@@ -292,6 +292,8 @@ aside.collapsed .sb-section{padding:8px 0}
   overflow:hidden;text-overflow:ellipsis;padding:0;
 }
 .card-url:focus{color:var(--blue)}
+.card-url-link{color:var(--text3);text-decoration:none;cursor:pointer;transition:color 0.15s}
+.card-url-link:hover{color:var(--blue);text-decoration:underline}
 .card-url-open{font-size:11px;color:var(--blue);text-decoration:none;flex-shrink:0;opacity:0;transition:opacity 0.15s}
 .card:hover .card-url-open{opacity:1}
 
@@ -1227,7 +1229,9 @@ function renderCard(r){
     </div>
     <textarea class="card-title" rows="1" placeholder="Title…" oninput="autoResize(this);updateRes('${r.id}','title',this.value)" onblur="saveData()">${r.title||''}</textarea>
     <div class="card-url-wrap">
-      <input class="card-url" type="url" placeholder="https://…" value="${r.url||''}" oninput="updateRes('${r.id}','url',this.value)" onblur="saveData()">
+      ${r.url
+        ? `<a class="card-url card-url-link" href="${r.url}" target="_blank" rel="noopener" title="${r.url}">${r.url}</a>`
+        : `<span class="card-url" style="color:var(--text3)">No URL</span>`}
       ${r.url?`<a class="card-url-open" href="${r.url}" target="_blank" rel="noopener">↗</a>`:''}
     </div>
     ${r.dueDate?dueBadge(r.dueDate):''}
