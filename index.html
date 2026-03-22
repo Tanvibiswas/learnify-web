@@ -2023,11 +2023,6 @@ function enterApp(){
   lp.style.opacity = '0';
   lp.style.transform = 'scale(1.03)';
   setTimeout(()=>{ lp.classList.add('lp-hidden'); }, 500);
-  localStorage.setItem('lf_visited','1');
-}
-// Skip landing if already visited
-if(localStorage.getItem('lf_visited')==='1'){
-  document.getElementById('landingPage').classList.add('lp-hidden');
 }
 
 loadData();
