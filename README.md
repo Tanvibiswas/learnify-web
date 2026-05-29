@@ -8,7 +8,7 @@ A smart, browser-based study resource organizer built for **Neurathon** (PS1) by
 
 ## 👥 Team Members
 
-- Tanvi Biswas
+- Tanvi Biswas(leader)
 - Kaushika Goswami
 - Sakshi Priya
 - Sharmistha Buragohain
